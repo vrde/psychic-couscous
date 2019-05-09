@@ -7,6 +7,7 @@ set -e
 
 PLATFORM=$(uname | tr '[:upper:]' '[:lower:]')
 ARCH=$(uname -m)
+echo "Settings: platform ${PLATFORM}, architecture ${ARCH}, version ${VERSION}"
 
 VERSION=$(curl -s https://api.github.com/repos/ethereum/go-ethereum/releases/latest | python -c "import sys, json; print(json.load(sys.stdin)['tag_name'])")
 echo "Settings: platform ${PLATFORM}, architecture ${ARCH}, version ${VERSION}"
